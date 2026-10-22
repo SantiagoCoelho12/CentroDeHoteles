@@ -2,6 +2,41 @@
 
 Versión local con Next.js, React y TypeScript: portada, listado y fichas adaptables a computadora y celular, búsqueda por nombre y filtros de tipo y zona. Los filtros de servicios aparecen cuando existen servicios cargados. Las fichas incluyen galería por tipo y enlaces de contacto cuando hay datos cargados. El mapa, los usuarios y la administración se incorporarán en próximas etapas. No hay despliegue.
 
+## Despliegue en GitHub Pages
+
+**Web:** [Centro de Hoteles de La Paloma](https://santiagocoelho12.github.io/CentroDeHoteles/)
+
+La demo se publica con el workflow **Publicar demo en GitHub Pages**, definido en `.github/workflows/pages.yml`.
+
+1. Subir los cambios del proyecto a la rama `master` de GitHub.
+2. En **Settings → Pages → Build and deployment → Source**, seleccionar **GitHub Actions**. Esta configuración se realiza una sola vez.
+3. Cada push a `master` inicia el despliegue automáticamente. También se puede ejecutar desde **Actions → Publicar demo en GitHub Pages → Run workflow**.
+4. El workflow instala las dependencias, ejecuta las pruebas, genera la web estática con `npm run build:pages` y publica la carpeta `out/`.
+5. Esperar a que los trabajos `build` y `deploy` terminen correctamente antes de revisar la web. Si no aparecen los cambios, comprobar el último workflow y recargar el navegador.
+
+No publicar la raíz del repositorio ni `docs/` como origen: contienen el README y documentación, no la aplicación compilada. La exportación ajusta las rutas al prefijo `/CentroDeHoteles/`.
+
+### Omitir un despliegue
+
+Si el mensaje del **último commit del push** comienza exactamente con `--noDeploy`, el workflow omite la compilación y el despliegue. Por ejemplo:
+
+```text
+--noDeploy Actualizar documentación
+```
+
+Si el push incluye varios commits, se evalúa únicamente el último. GitHub Actions puede mostrar la ejecución con los trabajos omitidos. La ejecución manual mediante **Run workflow** sigue compilando y desplegando, aunque el último commit tenga ese prefijo.
+
+Esta versión incluye alojamientos de borrador y datos de prueba. GitHub Pages no ejecuta el servidor de correo: el formulario permite probar el diseño y la validación, pero no envía emails. Las consultas por WhatsApp funcionan cuando el establecimiento tiene un número cargado.
+
+Para comprobar la versión estática antes de subir cambios:
+
+```powershell
+npm run build:pages
+npm run preview:pages
+```
+
+Abrir [la demo estática local](http://localhost:4174/CentroDeHoteles/). Más detalles en la [guía de GitHub Pages](docs/github-pages.md).
+
 ## Requisitos
 
 Para publicar esta primera versión de prueba en GitHub Pages, seguir la [guía de publicación](docs/github-pages.md). Incluye configuración de Actions, compilación estática y limitaciones del correo.
