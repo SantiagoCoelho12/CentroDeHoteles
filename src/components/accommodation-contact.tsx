@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from 'react';
 import type { Accommodation } from '../domain/accommodation';
 import { contactLinks } from '../domain/detail.mjs';
+import { assetPath } from '../lib/paths';
 
 export function AccommodationContact({ item, selected }: { item: Accommodation; selected: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -22,11 +23,12 @@ export function AccommodationContact({ item, selected }: { item: Accommodation; 
   }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === 'true') { setError('Esta versión de prueba no envía correos. El formulario permite probar el diseño y la validación.'); return; }
     if (pending) return;
     setPending(true); setError('');
     const values = new FormData(event.currentTarget);
     try {
-      const response = await fetch('/api/contacto', {
+      const response = await fetch(assetPath('/api/contacto'), {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ accommodationId: item.id, type: selected, requestId: requestId.current, name: values.get('name'), phone: values.get('phone'), message: values.get('message'), website: values.get('website') }),
       });
@@ -53,7 +55,7 @@ export function AccommodationContact({ item, selected }: { item: Accommodation; 
         <label className="field" htmlFor="inquiry-phone">Teléfono<input id="inquiry-phone" name="phone" type="tel" autoComplete="tel" required minLength={7} maxLength={30} disabled={pending} placeholder="Incluí el código de país" /></label>
         <label className="field" htmlFor="inquiry-message">Mensaje<textarea id="inquiry-message" name="message" required minLength={10} maxLength={4000} rows={5} disabled={pending} /></label>
         <div className="inquiry-honeypot" aria-hidden="true"><label>Sitio web<input name="website" autoComplete="off" tabIndex={-1} /></label></div>
-        <p className="email-sharing">El alojamiento recibirá tu nombre, teléfono y mensaje para responderte.</p>
+        <p className="email-sharing">{process.env.NEXT_PUBLIC_STATIC_DEMO === 'true' ? 'Demo: este formulario no envía correos ni guarda tus datos.' : 'El alojamiento recibirá tu nombre, teléfono y mensaje para responderte.'}</p>
         {error && <p className="email-error" role="alert">{error}</p>}
         <div className="email-dialog-actions"><button className="secondary-button" type="button" disabled={pending} onClick={() => dialog.current?.close()}>Cancelar</button><button className="primary-button" type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviar mensaje'}</button></div>
       </form>}

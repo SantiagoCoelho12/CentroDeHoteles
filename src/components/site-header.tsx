@@ -3,20 +3,21 @@
 import Link from 'next/link';
 import { useEffect, useRef, type MouseEvent } from 'react';
 import { es } from '../content/es';
+import { basePath } from '../lib/paths';
 
 export function SiteHeader({ current, overHero = false }: { current?: 'about'; overHero?: boolean }) {
   const header = useRef<HTMLElement>(null);
   const scrollAnimation = useRef<(() => void) | null>(null);
   useEffect(() => () => scrollAnimation.current?.(), []);
   function goToAccommodations(event: MouseEvent<HTMLAnchorElement>) {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || window.location.pathname !== '/') return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || ![`${basePath}/`, basePath || '/'].includes(window.location.pathname)) return;
     const title = document.getElementById('catalog-title');
     if (!title || !header.current) return;
     event.preventDefault();
     const style = getComputedStyle(header.current);
     const compactHeight = parseFloat(style.getPropertyValue('--header-expanded')) - parseFloat(style.getPropertyValue('--header-shrink'));
     const top = title.getBoundingClientRect().top + window.scrollY - compactHeight - 12;
-    window.history.replaceState(window.history.state, '', '/#alojamientos');
+    window.history.replaceState(window.history.state, '', `${basePath}/#alojamientos`);
     scrollAnimation.current?.();
     const start = window.scrollY;
     const destination = Math.max(0, Math.min(top, document.documentElement.scrollHeight - window.innerHeight));

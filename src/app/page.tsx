@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetPath } from '../lib/paths';
 import Link from 'next/link';
 import { getAccommodations } from '../lib/accommodations';
 import { es } from '../content/es';
@@ -13,7 +14,7 @@ export default async function Home() {
     <SiteHeader overHero />
     <main id="inicio">
       <section className="hero" aria-labelledby="hero-title">
-        <Image className="hero-photo" src="/fotos/la-paloma/portada.jpg" alt={es.hero.alt} fill preload sizes="100vw" />
+        <Image className="hero-photo" src={assetPath('/fotos/la-paloma/portada.jpg')} alt={es.hero.alt} fill preload sizes="100vw" />
         <div className="hero-copy shell"><p className="eyebrow">{es.hero.location}</p><h1 id="hero-title">Centro de Hoteles<br />de La Paloma</h1><p className="hero-description">{es.hero.description}</p><a className="explore-button" href="#alojamientos">{es.hero.action}<span aria-hidden="true">↓</span></a></div>
       </section>
       <AccommodationExplorer accommodations={accommodations} />

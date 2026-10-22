@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { assetPath } from '../lib/paths';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Accommodation } from '../domain/accommodation';
@@ -15,8 +17,12 @@ const services: Record<string, { es: string }> = catalogs.services;
 const copy = es.detail;
 
 export function AccommodationDetail({ item, initialType }: { item: Accommodation; initialType: string }) {
-  const [selected, setSelected] = useState(initialType);
+  const params = useSearchParams();
+  const requested = params.get('tipo') ?? initialType;
+  const validType = item.types.some(type => type.id === requested) ? requested : '';
+  const [selected, setSelected] = useState(validType);
   const [photoIndex, setPhotoIndex] = useState(0);
+  useEffect(() => { setSelected(validType); setPhotoIndex(0); }, [validType]);
   const photos = galleryFor(item, selected);
   const photo = photos[photoIndex] ?? photos[0];
   const shownTypes = item.types.filter(type => !selected || type.id === selected);
@@ -31,7 +37,7 @@ export function AccommodationDetail({ item, initialType }: { item: Accommodation
     <div className="detail-columns"><div>
       <section className="detail-gallery" aria-label={copy.gallery}>
         {photos.length > 1 && <div className="gallery-navigation"><button className="secondary-button" type="button" aria-label="Foto anterior" onClick={() => setPhotoIndex((photoIndex - 1 + photos.length) % photos.length)}>← Anterior</button><span>{photoIndex + 1} de {photos.length}</span><button className="secondary-button" type="button" aria-label="Foto siguiente" onClick={() => setPhotoIndex((photoIndex + 1) % photos.length)}>Siguiente →</button></div>}
-        {photo ? <><div className="detail-main-photo"><Image src={photo.src} alt={photo.alt.es} fill sizes="(max-width: 799px) 100vw, 740px" preload /></div><div className="gallery-caption" aria-live="polite"><span>{photo.category === 'general' ? copy.general : types[photo.category]?.es ?? photo.category} · {photoIndex + 1} / {photos.length}</span><span>{photo.alt.es}</span></div>{photos.length > 1 && <div className="gallery-thumbnails">{photos.map((image, index) => <button className="gallery-thumbnail" key={image.src} type="button" aria-label={`${copy.seePhoto} ${index + 1}: ${image.alt.es}`} aria-pressed={index === photoIndex} onClick={() => setPhotoIndex(index)}><Image src={image.src} alt="" fill sizes="100px" /></button>)}</div>}</> : <div className="detail-no-photo">{copy.photosPending}</div>}
+        {photo ? <><div className="detail-main-photo"><Image src={assetPath(photo.src)} alt={photo.alt.es} fill sizes="(max-width: 799px) 100vw, 740px" preload /></div><div className="gallery-caption" aria-live="polite"><span>{photo.category === 'general' ? copy.general : types[photo.category]?.es ?? photo.category} · {photoIndex + 1} / {photos.length}</span><span>{photo.alt.es}</span></div>{photos.length > 1 && <div className="gallery-thumbnails">{photos.map((image, index) => <button className="gallery-thumbnail" key={image.src} type="button" aria-label={`${copy.seePhoto} ${index + 1}: ${image.alt.es}`} aria-pressed={index === photoIndex} onClick={() => setPhotoIndex(index)}><Image src={assetPath(image.src)} alt="" fill sizes="100px" /></button>)}</div>}</> : <div className="detail-no-photo">{copy.photosPending}</div>}
       </section>
       <section className="detail-section"><h2>{copy.about}</h2><p>{item.description.es}</p></section>
       <section className="detail-section"><h2>{copy.sharedServices}</h2>{serviceList(item.sharedServices)}</section>

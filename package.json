@@ -8,6 +8,8 @@
     "node": ">=20.9.0"
   },
   "scripts": {
+    "build:pages": "node scripts/build-pages.mjs",
+    "preview:pages": "node scripts/preview-pages.mjs",
     "test": "node --test tests/detail.test.mjs tests/inquiry.test.mjs",
     "dev": "next dev --hostname 0.0.0.0",
     "build": "npm run validate:data && next build",

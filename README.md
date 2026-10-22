@@ -4,6 +4,8 @@ Versión local con Next.js, React y TypeScript: portada, listado y fichas adapta
 
 ## Requisitos
 
+Para publicar esta primera versión de prueba en GitHub Pages, seguir la [guía de publicación](docs/github-pages.md). Incluye configuración de Actions, compilación estática y limitaciones del correo.
+
 - Node.js 20.9 o superior y npm. Comprobar con `node --version` y `npm --version`.
 - Una terminal abierta en la carpeta del proyecto.
 - Acceso a internet para la primera instalación de dependencias. No se necesitan base de datos, cuentas ni claves externas para esta etapa.
@@ -138,6 +140,8 @@ La versión de prueba lleva `noindex` para evitar su indexación. Revisar esta c
 ## Guías del proyecto
 
 La documentación complementaria está en `docs/`:
+
+- [GitHub Pages](docs/github-pages.md): publicar y probar la demo estática con GitHub Actions.
 
 - [Cargar y mantener alojamientos](docs/cargar-alojamientos.md): datos, tipos, servicios, fotografías y traducciones.
 - [Fotografías de referencia](docs/fotos-referencia.md): origen de las imágenes y revisión antes de publicar.

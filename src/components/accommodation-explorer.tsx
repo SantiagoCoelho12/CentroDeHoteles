@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { assetPath } from '../lib/paths';
 import type { Accommodation } from '../domain/accommodation';
 import catalogs from '../../data/catalogs.json';
 import { es } from '../content/es';
@@ -63,7 +64,7 @@ export function AccommodationExplorer({ accommodations }: { accommodations: Acco
     {selectedCount > 0 && <div className="selected-filters" aria-label="Filtros aplicados">{type && <button type="button" onClick={() => setType('')}>{typeLabels[type].es} <span aria-label="Quitar">×</span></button>}{zone && <button type="button" onClick={() => setZone('')}>{zoneLabels[zone].es} <span aria-label="Quitar">×</span></button>}{services.map(key => <button key={key} type="button" onClick={() => setServices(services.filter(value => value !== key))}>{serviceLabels[key].es} <span aria-label="Quitar">×</span></button>)}</div>}
     <div className="result-row"><span role="status">{results.length} {results.length === 1 ? 'alojamiento' : 'alojamientos'} · A–Z</span>{(search || selectedCount > 0) && <button className="text-button" type="button" onClick={clear}>{es.catalog.clear}</button>}</div>
     <div className="accommodation-list">{results.map(item => <article className="accommodation" key={item.id}><Link className="accommodation-card-link" href={`/alojamientos/${item.id}${type ? `?tipo=${encodeURIComponent(type)}` : ''}`} onClick={remember} aria-label={`Ver ${item.name}`}>
-      <div className="accommodation-photo">{item.cover ? <Image src={item.cover.src} alt={item.cover.alt.es} fill sizes="(max-width: 699px) 100vw, (max-width: 1199px) 46vw, 526px" /> : <div className="photo-placeholder"><span aria-hidden="true">—</span>{es.catalog.noPhoto}</div>}</div>
+      <div className="accommodation-photo">{item.cover ? <Image src={assetPath(item.cover.src)} alt={item.cover.alt.es} fill sizes="(max-width: 699px) 100vw, (max-width: 1199px) 46vw, 526px" /> : <div className="photo-placeholder"><span aria-hidden="true">—</span>{es.catalog.noPhoto}</div>}</div>
       <p className="accommodation-type">{item.types.map(t => typeLabels[t.id]?.es ?? t.id).join(' · ')}</p><h3>{item.name}</h3><p className="location">{item.location.zone ? `${zoneLabels[item.location.zone]?.es ?? item.location.zone} · La Paloma` : es.catalog.unknownZone}</p><p className="summary">{item.summary.es}</p>
       <div className="accommodation-bottom"><span>{item.sharedServices.slice(0, 3).map(key => serviceLabels[key]?.es ?? key).join(' · ')}</span><span className="coming-soon">{es.catalog.pending}</span></div>
     </Link></article>)}</div>
