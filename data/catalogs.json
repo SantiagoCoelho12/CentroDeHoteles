@@ -1,0 +1,23 @@
+{
+  "defaultLocale": "es",
+  "locales": ["es"],
+  "accommodationTypes": {
+    "hotel": { "es": "Hotel" },
+    "cabanas": { "es": "Cabañas" },
+    "bungalows": { "es": "Bungalows" }
+  },
+  "services": {
+    "wifi": { "es": "Wifi" },
+    "piscina": { "es": "Piscina" },
+    "desayuno": { "es": "Desayuno" },
+    "estacionamiento": { "es": "Estacionamiento" },
+    "aire-acondicionado": { "es": "Aire acondicionado" },
+    "mascotas": { "es": "Acepta mascotas" },
+    "parrillero": { "es": "Parrillero" }
+  },
+  "zones": {
+    "centro": { "es": "Centro" },
+    "bahia-chica": { "es": "Bahía Chica" },
+    "anaconda": { "es": "Anaconda" }
+  }
+}

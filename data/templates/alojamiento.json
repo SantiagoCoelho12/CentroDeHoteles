@@ -1,0 +1,18 @@
+{
+  "id": "nombre-del-establecimiento",
+  "name": "Nombre del establecimiento",
+  "active": true,
+  "status": "draft",
+  "summary": { "es": "Presentación breve para la tarjeta." },
+  "description": { "es": "Descripción general del establecimiento." },
+  "location": { "address": null, "zone": null, "coordinates": null },
+  "contact": { "phone": null, "whatsapp": null, "email": null },
+  "cover": null,
+  "photos": [],
+  "sharedServices": [],
+  "types": [
+    { "id": "hotel", "description": { "es": "Descripción del hotel." }, "photos": [], "services": [] },
+    { "id": "cabanas", "description": { "es": "Descripción de las cabañas." }, "photos": [], "services": [] }
+  ],
+  "sources": []
+}

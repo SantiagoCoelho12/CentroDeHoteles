@@ -1,0 +1,18 @@
+{
+  "id": "la-tuna",
+  "name": "Hotel La Tuna",
+  "active": true,
+  "status": "draft",
+  "summary": { "es": "Hotel junto a la playa Bahía Chica, cerca del centro de La Paloma." },
+  "description": { "es": "Establecimiento presentado en la web del Centro de Hoteles de La Paloma. El contenido original describe un hotel de 20 dormitorios frente al mar. Información de borrador pendiente de actualización con el establecimiento." },
+  "location": { "address": null, "zone": "bahia-chica", "coordinates": null },
+  "contact": { "phone": null, "whatsapp": null, "email": null },
+  "cover": { "src": "/fotos/la-tuna/generales/referencia.jpg", "alt": { "es": "Fotografía de referencia de Hotel La Tuna" } },
+  "photos": [{ "src": "/fotos/la-tuna/generales/referencia.jpg", "alt": { "es": "Fotografía de referencia de Hotel La Tuna" } }],
+  "sharedServices": [],
+  "types": [{ "id": "hotel", "description": { "es": "Habitaciones de hotel. Características y servicios pendientes de confirmar. La galería incluye dos ilustraciones de prueba que no representan habitaciones ni instalaciones reales de La Tuna." }, "photos": [
+    { "src": "/fotos/prueba/hotel-1.svg", "alt": { "es": "Imagen de prueba: habitación ilustrativa, no corresponde a Hotel La Tuna" } },
+    { "src": "/fotos/prueba/hotel-2.svg", "alt": { "es": "Imagen de prueba: recepción ilustrativa, no corresponde a Hotel La Tuna" } }
+  ], "services": [] }],
+  "sources": [{ "url": "https://www.hoteleslapaloma.com.uy/latuna.php", "checkedAt": "2026-10-21", "notes": "Referencia obtenida del contenido indexado. La lectura directa no estuvo disponible. Contactos, fotos, coordenadas y servicios pendientes de verificación." }]
+}

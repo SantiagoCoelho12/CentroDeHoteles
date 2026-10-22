@@ -1,0 +1,15 @@
+{
+  "id": "tio-con",
+  "name": "Cabañas Tío Con",
+  "active": true,
+  "status": "draft",
+  "summary": { "es": "Complejo de cabañas independientes en un entorno arbolado." },
+  "description": { "es": "La web del centro describe un conjunto de diez cabañas en un parque arbolado. Información de borrador pendiente de actualización con el establecimiento." },
+  "location": { "address": null, "zone": null, "coordinates": null },
+  "contact": { "phone": null, "whatsapp": null, "email": null },
+  "cover": null,
+  "photos": [],
+  "sharedServices": [],
+  "types": [{ "id": "cabanas", "description": { "es": "Cabañas independientes. Capacidades, características y servicios pendientes de confirmar." }, "photos": [], "services": [] }],
+  "sources": [{ "url": "https://www.hoteleslapaloma.com.uy/tiocon.php", "checkedAt": "2026-10-21", "notes": "Referencia obtenida del contenido indexado. La lectura directa no estuvo disponible. Contactos, fotos, coordenadas y servicios pendientes de verificación." }]
+}

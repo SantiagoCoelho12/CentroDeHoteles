@@ -1,0 +1,24 @@
+{
+  "id": "complejo-de-prueba",
+  "name": "Complejo de prueba · Hotel y Cabañas",
+  "active": true,
+  "status": "draft",
+  "summary": { "es": "Alojamiento ficticio para probar hotel, cabañas y fotografías compartidas." },
+  "description": { "es": "Este establecimiento no existe: es un ejemplo de prueba. Seleccioná Todo, Hotel o Cabañas para comparar las fotografías, descripciones y servicios. Las imágenes son ilustraciones identificadas por categoría. No tiene contactos ni ubicación reales." },
+  "location": { "address": null, "zone": null, "coordinates": null },
+  "contact": { "phone": null, "whatsapp": null, "email": null },
+  "cover": { "src": "/fotos/prueba/general.svg", "alt": { "es": "Ilustración de prueba: piscina compartida" } },
+  "photos": [{ "src": "/fotos/prueba/general.svg", "alt": { "es": "Ilustración de prueba: piscina compartida" } }],
+  "sharedServices": ["wifi", "piscina", "estacionamiento"],
+  "types": [
+    { "id": "hotel", "description": { "es": "Hotel ficticio con desayuno y aire acondicionado. Sus fotos muestran una habitación y la recepción, además de la piscina compartida." }, "photos": [
+      { "src": "/fotos/prueba/hotel-1.svg", "alt": { "es": "Ilustración de prueba: habitación exclusiva del hotel" } },
+      { "src": "/fotos/prueba/hotel-2.svg", "alt": { "es": "Ilustración de prueba: recepción exclusiva del hotel" } }
+    ], "services": ["desayuno", "aire-acondicionado"] },
+    { "id": "cabanas", "description": { "es": "Cabañas ficticias con parrillero y admisión de mascotas. Sus fotos muestran el exterior y el interior de una cabaña, además de la piscina compartida. El desayuno del hotel no se ofrece en las cabañas." }, "photos": [
+      { "src": "/fotos/prueba/cabanas-1.svg", "alt": { "es": "Ilustración de prueba: exterior exclusivo de las cabañas" } },
+      { "src": "/fotos/prueba/cabanas-2.svg", "alt": { "es": "Ilustración de prueba: interior exclusivo de las cabañas" } }
+    ], "services": ["parrillero", "mascotas"] }
+  ],
+  "sources": []
+}
