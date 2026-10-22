@@ -135,6 +135,15 @@ Abrir [http://localhost:3000](http://localhost:3000). Sin `SHOW_DRAFTS=true`, lo
 
 La versión de prueba lleva `noindex` para evitar su indexación. Revisar esta configuración cuando se prepare la publicación. Las fotos de referencia y sus fuentes están registradas en [la guía de fotos](docs/fotos-referencia.md).
 
+## Guías del proyecto
+
+La documentación complementaria está en `docs/`:
+
+- [Cargar y mantener alojamientos](docs/cargar-alojamientos.md): datos, tipos, servicios, fotografías y traducciones.
+- [Fotografías de referencia](docs/fotos-referencia.md): origen de las imágenes y revisión antes de publicar.
+- [Contenido institucional](docs/contenido-institucional.md): fuente del texto de «Quiénes somos» y criterio de conservación.
+- [Envío de correos](docs/envio-de-correos.md): configuración de Resend y pruebas del formulario de contacto.
+
 ## Organización
 
 - `data/accommodations/`: un archivo JSON por establecimiento.
