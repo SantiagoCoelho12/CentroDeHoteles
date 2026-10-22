@@ -73,6 +73,8 @@ Los filtros de servicios aparecen únicamente si hay servicios cargados en los d
 
 ### Galerías y establecimiento mixto de prueba
 
+Al final de cada ficha, «Consultar fechas disponibles» abre un diálogo con tipo de alojamiento (Cualquiera o uno específico), calendario de entrada y salida, opción de fechas flexibles y contadores de adultos, niños y habitaciones. En computadora se ven dos meses; en celular uno con navegación. No se pueden elegir fechas pasadas ni una salida anterior o igual a la entrada. El botón final abre el mismo WhatsApp del contacto con toda la información, sin enviar automáticamente ni confirmar disponibilidad. En el complejo de prueba se puede revisar el enlace; las fichas sin WhatsApp muestran el dato pendiente y no habilitan el envío. Esta función funciona también en GitHub Pages.
+
 - La Tuna tiene su imagen de referencia y dos ilustraciones de prueba, identificadas como imágenes que no representan sus instalaciones. Probar «Anterior», «Siguiente» y las miniaturas.
 - Abrir `/alojamientos/complejo-de-prueba`: es un establecimiento ficticio, sin contactos ni ubicación reales, con hotel y cabañas.
 - «Todo» muestra cinco imágenes: una general, dos del hotel y dos de cabañas.
@@ -95,7 +97,7 @@ En las herramientas de desarrollo del navegador (`F12` o la opción «Inspeccion
 
 Para revisar desde un teléfono real, conectar ambos dispositivos a la misma red y abrir `http://IP-DE-LA-COMPUTADORA:3000`. Consultar la dirección IPv4 de la computadora con `ipconfig`; `localhost` en el teléfono apunta al propio teléfono. La conexión depende de que la red y el firewall permitan el acceso al servidor local.
 
-El bloque de contacto tiene cuatro filas: teléfono, WhatsApp con icono, dirección de correo y botón «Envianos un correo». Este último abre un formulario con nombre, teléfono y mensaje. WhatsApp y teléfono se habilitan al cargar datos válidos. Los tres borradores actuales todavía no tienen contactos confirmados; no se usan contactos ficticios. El mapa sigue pendiente.
+El bloque de contacto tiene cuatro filas: teléfono, WhatsApp con icono, dirección de correo y botón «Envianos un correo». Este último abre un formulario con nombre, email, teléfono y mensaje. WhatsApp y teléfono se habilitan al cargar datos válidos. Los tres borradores actuales todavía no tienen contactos confirmados; no se usan contactos ficticios. El mapa sigue pendiente.
 
 Para habilitar el envío de correos, configurar Resend y el remitente en `.env.local` según [la guía de envío](docs/envio-de-correos.md). Sin esa configuración o sin email del alojamiento, el formulario informa el problema y no simula éxito. Puede probarse abrir/cerrar el diálogo, la validación de campos requeridos y el aviso de correo pendiente con los borradores actuales.
 
@@ -141,6 +143,8 @@ La versión de prueba lleva `noindex` para evitar su indexación. Revisar esta c
 
 La documentación complementaria está en `docs/`:
 
+- [Idiomas](docs/idiomas.md): selector ES / EN / PT, traducciones y persistencia de la preferencia.
+
 - [GitHub Pages](docs/github-pages.md): publicar y probar la demo estática con GitHub Actions.
 
 - [Cargar y mantener alojamientos](docs/cargar-alojamientos.md): datos, tipos, servicios, fotografías y traducciones.
@@ -167,4 +171,4 @@ Los registros iniciales proceden de contenido indexado de la web actual. Son bor
 
 Portada de La Paloma y listado en la misma página; dos columnas en computadora y una en celular; orden alfabético español; mapa inicialmente cerrado y sincronizado con filtros; una tarjeta y un marcador por establecimiento; contacto desde la ficha. Cada establecimiento tiene un WhatsApp y un email y puede ofrecer varios tipos. Los filtros de tipo y servicios deben coincidir en el mismo tipo, sumando sus servicios a los compartidos. Los borradores podrán verse en la vista local de prueba; la futura vista pública mostrará únicamente registros activos y publicados.
 
-Los textos se guardan por idioma desde el comienzo. La prueba usa `es`; los futuros idiomas podrán agregarse al catálogo y a los textos, con español como respaldo para traducciones ausentes.
+El encabezado permite seleccionar ES, EN y PT. Se traducen la interfaz, los contenidos actuales, los formularios, el calendario y los mensajes de WhatsApp; los nombres propios se conservan. La selección se guarda en el navegador y persiste al navegar y recargar. Los textos nuevos pueden tener `es`, `en` y `pt`, con español como respaldo si falta una traducción. Ver [la guía de idiomas](docs/idiomas.md).

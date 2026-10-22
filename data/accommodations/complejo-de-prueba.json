@@ -3,22 +3,110 @@
   "name": "Complejo de prueba · Hotel y Cabañas",
   "active": true,
   "status": "draft",
-  "summary": { "es": "Alojamiento ficticio para probar hotel, cabañas y fotografías compartidas." },
-  "description": { "es": "Este establecimiento no existe: es un ejemplo de prueba. Seleccioná Todo, Hotel o Cabañas para comparar las fotografías, descripciones y servicios. Las imágenes son ilustraciones identificadas por categoría. No tiene contactos ni ubicación reales." },
-  "location": { "address": null, "zone": null, "coordinates": null },
-  "contact": { "phone": null, "whatsapp": null, "email": null },
-  "cover": { "src": "/fotos/prueba/general.svg", "alt": { "es": "Ilustración de prueba: piscina compartida" } },
-  "photos": [{ "src": "/fotos/prueba/general.svg", "alt": { "es": "Ilustración de prueba: piscina compartida" } }],
-  "sharedServices": ["wifi", "piscina", "estacionamiento"],
+  "summary": {
+    "es": "Alojamiento ficticio para probar hotel, cabañas y fotografías compartidas.",
+    "en": "Fictional property for testing hotel, cabins and shared photos.",
+    "pt": "Hospedagem fictícia para testar hotel, cabanas e fotos compartilhadas."
+  },
+  "description": {
+    "es": "Este establecimiento no existe: es un ejemplo de prueba. Seleccioná Todo, Hotel o Cabañas para comparar las fotografías, descripciones y servicios. Las imágenes son ilustraciones identificadas por categoría. No tiene contactos ni ubicación reales.",
+    "en": "This property does not exist: it is a test example. Select All, Hotel or Cabins to compare photos, descriptions and amenities. Images are illustrations labelled by category. Contact and location information is for testing.",
+    "pt": "Este estabelecimento não existe: é um exemplo de teste. Selecione Tudo, Hotel ou Cabanas para comparar fotos, descrições e comodidades. As imagens são ilustrações identificadas por categoria. Os dados de contato e localização são de teste."
+  },
+  "location": {
+    "address": null,
+    "zone": null,
+    "coordinates": null
+  },
+  "contact": {
+    "phone": null,
+    "whatsapp": "59894437534",
+    "email": null
+  },
+  "cover": {
+    "src": "/fotos/prueba/general.svg",
+    "alt": {
+      "es": "Ilustración de prueba: piscina compartida",
+      "en": "Test illustration: shared swimming pool",
+      "pt": "Ilustração de teste: piscina compartilhada"
+    }
+  },
+  "photos": [
+    {
+      "src": "/fotos/prueba/general.svg",
+      "alt": {
+        "es": "Ilustración de prueba: piscina compartida",
+        "en": "Test illustration: shared swimming pool",
+        "pt": "Ilustração de teste: piscina compartilhada"
+      }
+    }
+  ],
+  "sharedServices": [
+    "wifi",
+    "piscina",
+    "estacionamiento"
+  ],
   "types": [
-    { "id": "hotel", "description": { "es": "Hotel ficticio con desayuno y aire acondicionado. Sus fotos muestran una habitación y la recepción, además de la piscina compartida." }, "photos": [
-      { "src": "/fotos/prueba/hotel-1.svg", "alt": { "es": "Ilustración de prueba: habitación exclusiva del hotel" } },
-      { "src": "/fotos/prueba/hotel-2.svg", "alt": { "es": "Ilustración de prueba: recepción exclusiva del hotel" } }
-    ], "services": ["desayuno", "aire-acondicionado"] },
-    { "id": "cabanas", "description": { "es": "Cabañas ficticias con parrillero y admisión de mascotas. Sus fotos muestran el exterior y el interior de una cabaña, además de la piscina compartida. El desayuno del hotel no se ofrece en las cabañas." }, "photos": [
-      { "src": "/fotos/prueba/cabanas-1.svg", "alt": { "es": "Ilustración de prueba: exterior exclusivo de las cabañas" } },
-      { "src": "/fotos/prueba/cabanas-2.svg", "alt": { "es": "Ilustración de prueba: interior exclusivo de las cabañas" } }
-    ], "services": ["parrillero", "mascotas"] }
+    {
+      "id": "hotel",
+      "description": {
+        "es": "Hotel ficticio con desayuno y aire acondicionado. Sus fotos muestran una habitación y la recepción, además de la piscina compartida.",
+        "en": "Fictional hotel with breakfast and air conditioning. Its photos show a room and reception, plus the shared pool.",
+        "pt": "Hotel fictício com café da manhã e ar-condicionado. Suas fotos mostram um quarto e a recepção, além da piscina compartilhada."
+      },
+      "photos": [
+        {
+          "src": "/fotos/prueba/hotel-1.svg",
+          "alt": {
+            "es": "Ilustración de prueba: habitación exclusiva del hotel",
+            "en": "Test illustration: hotel room",
+            "pt": "Ilustração de teste: quarto exclusivo do hotel"
+          }
+        },
+        {
+          "src": "/fotos/prueba/hotel-2.svg",
+          "alt": {
+            "es": "Ilustración de prueba: recepción exclusiva del hotel",
+            "en": "Test illustration: hotel reception",
+            "pt": "Ilustração de teste: recepção exclusiva do hotel"
+          }
+        }
+      ],
+      "services": [
+        "desayuno",
+        "aire-acondicionado"
+      ]
+    },
+    {
+      "id": "cabanas",
+      "description": {
+        "es": "Cabañas ficticias con parrillero y admisión de mascotas. Sus fotos muestran el exterior y el interior de una cabaña, además de la piscina compartida. El desayuno del hotel no se ofrece en las cabañas.",
+        "en": "Fictional pet-friendly cabins with a barbecue. Photos show the outside and inside of a cabin, plus the shared pool. The hotel's breakfast is not offered in the cabins.",
+        "pt": "Cabanas fictícias com churrasqueira que aceitam animais. As fotos mostram o exterior e o interior de uma cabana, além da piscina compartilhada. O café da manhã do hotel não é oferecido nas cabanas."
+      },
+      "photos": [
+        {
+          "src": "/fotos/prueba/cabanas-1.svg",
+          "alt": {
+            "es": "Ilustración de prueba: exterior exclusivo de las cabañas",
+            "en": "Test illustration: cabin exterior",
+            "pt": "Ilustração de teste: exterior exclusivo das cabanas"
+          }
+        },
+        {
+          "src": "/fotos/prueba/cabanas-2.svg",
+          "alt": {
+            "es": "Ilustración de prueba: interior exclusivo de las cabañas",
+            "en": "Test illustration: cabin interior",
+            "pt": "Ilustração de teste: interior exclusivo das cabanas"
+          }
+        }
+      ],
+      "services": [
+        "parrillero",
+        "mascotas"
+      ]
+    }
   ],
   "sources": []
 }

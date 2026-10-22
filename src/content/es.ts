@@ -3,7 +3,7 @@ export const es = {
   nav: { accommodations: 'Alojamientos', about: 'Quiénes somos' },
   hero: {
     location: 'La Paloma · Rocha · Uruguay', title: 'Centro de Hoteles de La Paloma',
-    description: 'Hoteles, cabañas y complejos. Encontrá dónde quedarte en La Paloma.',
+    description: 'Encontrá dónde quedarte en La Paloma.',
     action: 'Explorar alojamientos', alt: 'Faro de La Paloma junto a la costa atlántica',
   },
   catalog: {
@@ -22,13 +22,13 @@ export const es = {
     seePhoto: 'Ver foto', photosPending: 'Fotografías pendientes para esta selección',
     about: 'Sobre el establecimiento', sharedServices: 'Servicios compartidos',
     servicesPending: 'Servicios pendientes de confirmar.', location: 'Ubicación',
-    addressPending: 'Dirección pendiente de confirmar.', contact: 'Contacto directo',
+    addressPending: 'Dirección pendiente de confirmar.', contact: 'Contacto',
     contactIntro: 'Consultá directamente con el establecimiento.',
     contactPending: 'WhatsApp y email pendientes de confirmar.', email: 'Enviar email',
   },
   about: {
-    title: 'El centro', description: 'Una organización que reúne hoteles, cabañas y complejos de La Paloma. Conocé sus establecimientos y contactá directamente con cada uno.',
-    action: 'Conocé el centro',
+    title: 'Centro de Hoteles de La Paloma', description: 'Una organización que reúne hoteles, cabañas y complejos de La Paloma. Conocé sus establecimientos y contactá directamente con cada uno.',
+    action: 'Conocé el centro de hoteles',
     pageTitle: '¿Quiénes somos?',
     paragraphs: [
       'El Centro de Hoteles de La Paloma es una asociación civil sin fines de lucro, que funciona como tal desde el año 1987, con 32 años de trayectoria ininterrumpida.',

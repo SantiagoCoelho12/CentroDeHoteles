@@ -17,8 +17,8 @@ La clave permanece en el servidor y nunca lleva prefijo `NEXT_PUBLIC_`. No guard
 
 ## Comportamiento
 
-- El visitante completa nombre, teléfono y mensaje. El alojamiento responde al teléfono indicado; no se solicita correo al visitante.
-- El envío sale desde `CONTACT_FROM_EMAIL` y va al `contact.email` del establecimiento. El texto incluye nombre, teléfono, mensaje y tipo seleccionado si corresponde.
+- El visitante completa nombre, email, teléfono y mensaje. El alojamiento puede responder al email indicado mediante Reply-To o al teléfono. El selector de país muestra Argentina, Brasil y Uruguay primero; el resto se ordena alfabéticamente.
+- El envío sale desde `CONTACT_FROM_EMAIL` y va al `contact.email` del establecimiento. El texto incluye nombre, email, teléfono, mensaje y tipo seleccionado si corresponde.
 - La ficha muestra la dirección del alojamiento; el botón abre el formulario dentro de la web, sin abrir un cliente de correo.
 - WhatsApp usa el enlace oficial `wa.me` con el número internacional. Abre el chat en la app cuando el dispositivo lo admite; en computadora puede ofrecer WhatsApp Web. No envía el mensaje automáticamente.
 - Sin email del alojamiento o sin configuración del proveedor, se muestra un error claro y no se confirma un envío inexistente.

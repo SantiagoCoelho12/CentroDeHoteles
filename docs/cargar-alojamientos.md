@@ -15,7 +15,7 @@
 
 `phone` es el teléfono para llamadas, separado del número de WhatsApp: puede ser distinto. Ejemplo de formato: `"phone": "+598 99 123 456"` (número ilustrativo, no cargar sin verificar). Es opcional y puede quedar en `null`. En la ficha aparece un enlace `tel:` cuando está completo.
 
-El bloque «Contacto directo» muestra cuatro filas: teléfono, chat de WhatsApp con icono, dirección de correo y botón «Envianos un correo». El botón abre un formulario con nombre, teléfono y mensaje. El destinatario se obtiene del `email` de este archivo en el servidor; no se elige desde el navegador. Consultar `docs/envio-de-correos.md` para habilitar Resend.
+El bloque «Contacto» muestra cuatro filas: teléfono, chat de WhatsApp con icono, dirección de correo y botón «Envianos un correo». El botón abre un formulario con nombre, email, teléfono y mensaje. El destinatario se obtiene del `email` de este archivo en el servidor; no se elige desde el navegador. Consultar `docs/envio-de-correos.md` para habilitar Resend.
 
 Las coordenadas tienen la forma `{ "lat": -34.0, "lng": -54.0 }`: estos números son solo un ejemplo de formato, no la ubicación de ningún alojamiento. Confirmar el punto real antes de publicarlo. Mientras falten datos, usar `null`; no inventar valores.
 

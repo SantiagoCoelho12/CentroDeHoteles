@@ -1,4 +1,5 @@
 const attempts = new Map();
+import { translate } from '../content/translate.mjs';
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const result = (status, error) => Response.json({ error }, { status });
 
@@ -31,11 +32,15 @@ export async function handleInquiry(request, { getItems, apiKey, from, send = fe
   if (!input || typeof input !== 'object' || Array.isArray(input)) return result(400, 'Formulario no válido.');
   if (input.website) return result(400, 'Solicitud no válida.');
   const { accommodationId, requestId } = input;
+  const locale = ['es', 'en', 'pt'].includes(input.locale) ? input.locale : 'es';
+  const t = text => translate(text, locale);
   const name = typeof input.name === 'string' ? input.name.trim() : '';
+  const email = typeof input.email === 'string' ? input.email.trim() : '';
   const phone = typeof input.phone === 'string' ? input.phone.trim() : '';
   const message = typeof input.message === 'string' ? input.message.trim() : '';
   if (typeof accommodationId !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(accommodationId) || typeof requestId !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)) return result(400, 'Solicitud no válida. Recargá el formulario.');
   if (name.length < 2 || name.length > 100 || /[\r\n]/.test(name)) return result(400, 'Ingresá un nombre válido de entre 2 y 100 caracteres.');
+  if (email.length > 254 || !emailPattern.test(email)) return result(400, 'Ingresá un email válido para que el alojamiento pueda responderte.');
   if (!/^\+?[\d ()-]{7,30}$/.test(phone) || phone.replace(/\D/g, '').length < 7) return result(400, 'Ingresá un teléfono válido con código de país.');
   if (message.length < 10 || message.length > 4000) return result(400, 'El mensaje debe tener entre 10 y 4000 caracteres.');
   const item = (await getItems()).find(item => item.id === accommodationId);
@@ -53,8 +58,8 @@ export async function handleInquiry(request, { getItems, apiKey, from, send = fe
       method: 'POST', signal: AbortSignal.timeout(15000),
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': `inquiry-${item.id}-${requestId}` },
       body: JSON.stringify({
-        from, to: [item.contact.email], subject: `Consulta desde el Centro de Hoteles: ${item.name}`,
-        text: [`Consulta para ${item.name}`, type ? `Tipo de alojamiento: ${type}` : '', `Nombre: ${name}`, `Teléfono: ${phone}`, '', 'Mensaje:', message].filter(line => line !== '').join('\n'),
+        from, to: [item.contact.email], reply_to: email, subject: `${locale === 'en' ? 'Enquiry from Centro de Hoteles' : locale === 'pt' ? 'Consulta pelo Centro de Hoteles' : 'Consulta desde el Centro de Hoteles'}: ${item.name}`,
+        text: [item.name, type ? `${t('Tipo de alojamiento:')} ${t(type === 'cabanas' ? 'Cabañas' : type === 'hotel' ? 'Hotel' : type)}` : '', `${t('Nombre')}: ${name}`, `Email: ${email}`, `${t('Teléfono')}: ${phone}`, '', `${t('Mensaje')}:`, message].filter(line => line !== '').join('\n'),
       }),
     });
     if (!response.ok) return result(502, 'No se pudo enviar el correo. Intentá nuevamente en unos minutos.');

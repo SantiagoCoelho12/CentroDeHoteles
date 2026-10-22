@@ -1,23 +1,79 @@
 {
   "defaultLocale": "es",
-  "locales": ["es"],
+  "locales": [
+    "es",
+    "en",
+    "pt"
+  ],
   "accommodationTypes": {
-    "hotel": { "es": "Hotel" },
-    "cabanas": { "es": "Cabañas" },
-    "bungalows": { "es": "Bungalows" }
+    "hotel": {
+      "es": "Hotel",
+      "en": "Hotel",
+      "pt": "Hotel"
+    },
+    "cabanas": {
+      "es": "Cabañas",
+      "en": "Cabins",
+      "pt": "Cabanas"
+    },
+    "bungalows": {
+      "es": "Bungalows",
+      "en": "Bungalows",
+      "pt": "Bangalôs"
+    }
   },
   "services": {
-    "wifi": { "es": "Wifi" },
-    "piscina": { "es": "Piscina" },
-    "desayuno": { "es": "Desayuno" },
-    "estacionamiento": { "es": "Estacionamiento" },
-    "aire-acondicionado": { "es": "Aire acondicionado" },
-    "mascotas": { "es": "Acepta mascotas" },
-    "parrillero": { "es": "Parrillero" }
+    "wifi": {
+      "es": "Wifi",
+      "en": "Wi-Fi",
+      "pt": "Wi-Fi"
+    },
+    "piscina": {
+      "es": "Piscina",
+      "en": "Swimming pool",
+      "pt": "Piscina"
+    },
+    "desayuno": {
+      "es": "Desayuno",
+      "en": "Breakfast",
+      "pt": "Café da manhã"
+    },
+    "estacionamiento": {
+      "es": "Estacionamiento",
+      "en": "Parking",
+      "pt": "Estacionamento"
+    },
+    "aire-acondicionado": {
+      "es": "Aire acondicionado",
+      "en": "Air conditioning",
+      "pt": "Ar-condicionado"
+    },
+    "mascotas": {
+      "es": "Acepta mascotas",
+      "en": "Pets welcome",
+      "pt": "Aceita animais de estimação"
+    },
+    "parrillero": {
+      "es": "Parrillero",
+      "en": "Barbecue",
+      "pt": "Churrasqueira"
+    }
   },
   "zones": {
-    "centro": { "es": "Centro" },
-    "bahia-chica": { "es": "Bahía Chica" },
-    "anaconda": { "es": "Anaconda" }
+    "centro": {
+      "es": "Centro",
+      "en": "Town centre",
+      "pt": "Centro"
+    },
+    "bahia-chica": {
+      "es": "Bahía Chica",
+      "en": "Bahía Chica",
+      "pt": "Bahía Chica"
+    },
+    "anaconda": {
+      "es": "Anaconda",
+      "en": "Anaconda",
+      "pt": "Anaconda"
+    }
   }
 }
